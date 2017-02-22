@@ -1,9 +1,9 @@
 <?php
 //connect to the database
-$dbUser = 'postgres';
-$dbPassword = 'tjpjtpp7';
-$dbName = 'postgres';
-$dbHost = '127.0.0.1';
+$dbUser = 'agiktypvbhydcj';
+$dbPassword = '9ae4f3fc76191a88de70e0f68af973aa9425d7e8683d25dd5bcc4417f85adcd1';
+$dbName = 'd1lkt0bdacr4qm';
+$dbHost = 'ec2-54-225-71-119.compute-1.amazonaws.com';
 $dbPort = '5432';
 try{
 	// Create the PDO connection
