@@ -2,6 +2,14 @@
 <html>
   <head>
     <?php include './modules/head.html'; ?>
+    <script>
+      function stopRKey(evt) {
+        var evt = (evt) ? evt : ((event) ? event : null);
+        var node = (evt.target) ? evt.target : ((evt.srcElement) ? evt.srcElement : null);
+        if ((evt.keyCode == 13) && (node.type=="text"))  {return false;}
+      }
+      document.onkeypress = stopRKey;
+    </script>
   </head>
   <body>
       <header>
@@ -55,7 +63,7 @@
                               <input type="text" name="checklist_item[]" class="form-control"/>
                           </li>
                       </ul>
-                      <button type="button" onclick="checklist();">Add</button>
+                      <button type="button" onclick="checklist();" class="btn btn-default">Add Item</button>
                       <br /><br /><br />
                       <label>Notes</label>
                       <textarea name="project_notes" rows="4" cols="50" class="form-control"></textarea>

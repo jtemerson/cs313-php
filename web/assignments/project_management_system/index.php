@@ -206,7 +206,7 @@ case 'delete_checklist_item':
       $error = "Sorry $org_name, we could not delete the project.";
   }
 
-  header('Location: .?action=display_projet');
+  header('Location: .?action=display_edit_projet');
 
 break;
 
@@ -289,10 +289,12 @@ case 'edit_project':
   $project_paid = filter_input(INPUT_POST, 'project_paid');
   $project_id = filter_input(INPUT_POST, 'project_id');
   $project_complete = filter_input(INPUT_POST, 'project_complete');
+  $project_checklist = $_POST['checklist_item'];
   $org_id = $_SESSION['org_id'];
 
   edit_project($project_id, $org_id, $project_name, $project_deadline, $project_priority, $project_notes, $project_location, $project_paid, $project_complete);
-
+  add_checklist($project_id, $project_checklist);
+  
   header('Location: .?action=dashboard');
 
 break;

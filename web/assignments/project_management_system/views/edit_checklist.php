@@ -36,7 +36,9 @@
                    <tbody>
                        <?php foreach ($checklists as $checklist) : ?>
                        <tr>
-                           <td><?php echo $checklist['checklist_item']; ?></td>
+                           <td>
+                             <?php echo $checklist['checklist_item']; ?>
+                           </td>
 
                            <!-- Delete Button -->
                            <td>
@@ -60,9 +62,17 @@
                          <input type="text" name="checklist_item[]" class="form-control" />
                      </li>
                  </ul>
-                 <button type="button" onclick="checklist();">Add</button><br /><br />
-                 <input type="submit" value="Save Checklist" class="btn btn-success" />
+                 <button type="button" onclick="checklist();" class="btn btn-default">Add Item</button><br /><br />
+                 <div class="row">
+                   <div class="col-md-5">
+                     <input type="submit" value="Save Checklist" class="btn btn-success" />
+                   </div>
+                   <div class="col-md-5">
+                     <a href=".?action=dashboard"><input type="button" value="Back" class="btn btn-primary"/></a>
+                   </div>
+                 </div>
                </form>
+               <br /><br /><br />
              </div>
         </main>
 

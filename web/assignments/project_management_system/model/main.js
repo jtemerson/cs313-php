@@ -9,10 +9,13 @@ function checklist(){
   var att_class = document.createAttribute("class");
   att_class.value = "form-control";
   input.setAttributeNode(att_class);
+  var att_onchange = document.createAttribute("onchange");
+  att_onchange.value = "checklist();";
+  input.setAttributeNode(att_onchange);
 
   var li = document.createElement("li");
   li.appendChild(input);
   var checklist = document.getElementById("checklist");
-  checklist.insertBefore(li, checklist.childNodes[0]);
+  checklist.appendChild(li);
 
 }

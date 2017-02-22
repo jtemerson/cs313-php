@@ -14,3 +14,6 @@ header h2{
 .inside_h3{
   font-size: 0.6em;
 }
+ul{
+  list-style-type: none;
+}

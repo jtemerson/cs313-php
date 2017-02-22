@@ -1,4 +1,3 @@
-<?php
 //connect to the database
 $dbUser = 'agiktypvbhydcj';
 $dbPassword = '9ae4f3fc76191a88de70e0f68af973aa9425d7e8683d25dd5bcc4417f85adcd1';

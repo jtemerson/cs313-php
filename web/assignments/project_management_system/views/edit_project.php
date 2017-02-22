@@ -43,6 +43,23 @@
                       <option value="5" <?php if($project_priority == '5'){echo 'selected = "selected"';} ?>>5</option>
                   </select>
                   <br /><br /><br />
+                  <h2>Checklist Items</h2>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Item</th>
+                            </tr>
+                        <thead>
+                        <tbody>
+                            <?php foreach ($checklists as $checklist) : ?>
+                            <tr>
+                                <td>
+                                  <input type="text" name="checklist_item[]" value="<?php echo $checklist['checklist_item']; ?>" class="form-control"/>
+                                </td>
+                            </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
                   <label>Notes</label>
                   <textarea name="project_notes" rows="4" cols="50" class="form-control"><?php echo $project_notes; ?></textarea>
                   <br /><br /><br />

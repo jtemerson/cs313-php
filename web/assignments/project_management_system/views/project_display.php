@@ -51,18 +51,19 @@ session_start();
 
             <h3>Location: <span class="inside_h3"><?php echo $project_location; ?></span></h3>
 
-            <h3>Notes:</h3>
-            <p><?php echo $project_notes; ?></p>
-
             <h3>Checklist:</h3>
+            <ol><?php foreach ($checklists as $checklist) {
+                echo "<li>$checklist[checklist_item]</li>";
+            } ?></ol>
             <form action="." method="post">
               <input type="hidden" name="action" value="display_edit_checklist"/>
               <input type="hidden" name="project_id" value="<?php echo $project_id; ?>" />
               <input type="submit" value="Edit Checklist" class="btn btn-default" />
             </form>
-            <ol><?php foreach ($checklists as $checklist) {
-                echo "<li>$checklist[checklist_item]</li>";
-            } ?></ol>
+
+            <h3>Notes:</h3>
+            <p><?php echo $project_notes; ?></p>
+
             <div class="row">
               <div class="col-md-1">
                 <!-- Mark Complete Button -->
