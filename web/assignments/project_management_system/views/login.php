@@ -1,36 +1,38 @@
 <!DOCTYPE html>
 <html>
-    <head>
+  <head>
+    <?php include './modules/head.html'; ?>
+  </head>
+  <body>
+      <header>
+          <?php include './modules/header.php'; ?>
+      </header>
 
-    </head>
-    <body>
-        <header>
-            <div>
-              <?php
-              if(isset($message)){
-                   echo "<p>$message</p>";
-               }
-               if(isset($error)){
-                 echo "<p>$error</p>";
-               }
-               ?>
-            </div>
-        </header>
+      <nav>
+          <?php include './modules/nav.php'; ?>
+      </nav>
 
-        <nav>
-            <div>
-
-            </div>
-        </nav>
-
-        <main>
-            <div>
+        <main class="container-fluid">
+          <?php
+            if($error){
+                echo "<div class='row'>
+                        <div class='col-md-3'>
+                          <div class='alert alert-danger'>
+                            <strong id='error'>$error</strong>
+                          </div>
+                        </div>
+                      </div>";
+            }
+          ?>
+            <h1>Login to your account</h1>
+            <div class="col-md-3">
               <form action="." method="post">
                 <label>Username</label>
-                <input type="text" name="org_username" placeholder="Enter Username">
+                <input type="text" name="org_username" placeholder="Enter Username" class="form-control">
                 <label>Password</label>
-                <input type="password" name="org_pwd" placeholder="Enter Password">
-                <input type="submit" name="action" value="Login">
+                <input type="password" name="org_pwd" placeholder="Enter Password" class="form-control">
+                <br />
+                <input type="submit" name="action" value="Login" class="btn btn-success">
               </form>
             </div>
         </main>

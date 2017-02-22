@@ -1,0 +1,16 @@
+h1{
+  font-size: 1.5em;
+}
+header h2{
+   font-size: 1.5em;
+   float: right;
+ }
+#p_name{
+  font-weight: bold;
+}
+#p_deadline{
+  font-size: 0.6em;
+}
+.inside_h3{
+  font-size: 0.6em;
+}

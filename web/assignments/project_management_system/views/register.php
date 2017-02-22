@@ -3,46 +3,49 @@ session_start();
 ?>
 <!DOCTYPE html>
 <html>
-    <head>
+<head>
+  <?php include './modules/head.html'; ?>
+</head>
+<body>
+    <header>
+        <?php include './modules/header.php'; ?>
+    </header>
 
-    </head>
-    <body>
-        <header>
-          <h1>Hello World!</h1>
-          <?php if(isset($error)){
-               echo "<p>$error</p>";
-           }?>
-        </header>
+    <nav>
+        <?php include './modules/nav.php'; ?>
+    </nav>
 
-        <nav>
-
-        </nav>
-
-        <main>
-            <div>
+        <main class="container-fluid">
+          <?php
+            if($error){
+                echo "<div class='row'>
+                        <div class='col-md-3'>
+                          <div class='alert alert-danger'>
+                            <strong id='error'>$error</strong>
+                          </div>
+                        </div>
+                      </div>";
+            }
+          ?>
+          <h1>Create an Account</h1>
+            <div class="col-md-3">
                 <form name="action" method="post">
-                    <label>Company/Organization Name:</label>
-                    <input type="text" name="org_name" value="<?php echo htmlspecialchars($org_name);?>" />
+                    <label>*Company/Organization Name:</label>
+                    <input type="text" name="org_name" value="<?php echo htmlspecialchars($org_name);?>" class="form-control"/>
                     <br /><br />
-                    <label>Username:</label>
-                    <input type="text" name="org_username" value="<?php echo htmlspecialchars($org_username);?>" />
+                    <label>*Username:</label>
+                    <input type="text" name="org_username" value="<?php echo htmlspecialchars($org_username);?>" class="form-control" />
                     <br /><br />
-                    <label>Password:</label>
-                    <input type="text" name="org_pwd" value="<?php echo htmlspecialchars($org_pwd);?>" />
+                    <label>*Password:</label>
+                    <input type="password" name="org_pwd" value="<?php echo htmlspecialchars($org_pwd);?>" class="form-control" />
+                    <p>(must be 8 characters)</p>
                     <br /><br />
-                    <label>Verify Password:</label>
-                    <input type="text" name="pwd_verify" value="<?php echo htmlspecialchars($pwd_verify);?>" />
+                    <label>*Verify Password:</label>
+                    <input type="password" name="pwd_verify" value="<?php echo htmlspecialchars($pwd_verify);?>" class="form-control" />
                     <br /><br />
-                    <input type="submit" name="action" value="Register" />
+                    <input type="submit" name="action" value="Register" class="btn btn-success" />
                 </form>
                 <br /><br />
-                <form action=".?action=dashboard" method="post">
-                    <input type="submit" value="Dashboard"  />
-                </form>
-                <br /><br />
-                <form action=".?action=sign_in" method="post">
-                    <input type="submit" value="Login"  />
-                </form>
             </div>
         </main>
 
