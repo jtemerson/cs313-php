@@ -197,16 +197,14 @@ case 'delete_project':
 break;
 
 case 'delete_checklist_item':
-
   $checklist_id = filter_input(INPUT_POST, 'checklist_id');
-
   $result = delete_checklist_item($checklist_id);
 
   if(!isset($result)){
       $error = "Sorry $org_name, we could not delete the project.";
   }
 
-  header('Location: .?action=display_edit_projet');
+  header('Location: .?action=dashboard');
 
 break;
 
@@ -272,7 +270,6 @@ break;
 case 'display_edit_checklist':
 
   $project_id = filter_input(INPUT_POST, 'project_id');
-
   $checklists = get_checklist_items_by_project_id($project_id);
 
   include 'views/edit_checklist.php';
@@ -294,7 +291,7 @@ case 'edit_project':
 
   edit_project($project_id, $org_id, $project_name, $project_deadline, $project_priority, $project_notes, $project_location, $project_paid, $project_complete);
   add_checklist($project_id, $project_checklist);
-  
+
   header('Location: .?action=dashboard');
 
 break;
