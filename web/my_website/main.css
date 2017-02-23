@@ -1,0 +1,40 @@
+header h1{
+  text-align: center;
+}
+#mainPic{
+  height: 250px;
+  width: 250px;
+  transition: border-radius 3s;
+}
+#mainPic:hover{
+  border-radius: 100%;
+}
+#mainQuote{
+  font-size: 2em;
+  padding-top: 10%;
+}
+.navbar .navbar-nav {
+    display: inline-block;
+    float: none;
+}
+.navbar .navbar-collapse {
+    text-align: center;
+}
+.faceRatings{
+  height: 200px;
+  width: 300px;
+  transition: height 3s, width 3s;
+}
+.faceRatings:hover{
+  height: 250px;
+  width: 400px;
+}
+#lastSection{
+  padding-bottom: 20%;
+}
+#myCarousel{
+  width: 550px;
+}
+#myCarousel img{
+  width: 100%;
+}
